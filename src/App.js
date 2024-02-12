@@ -2,22 +2,33 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+    let insertData = "Астахов Никита Иванович Борисов Денис Александрович Вдовичев Никита Сергеевич Жирнов Никита Игоревич Заикин Даниил Юрьевич Зворыкин Глеб Игоревич Козлова Мария Евгеньевна Крутиков Никита Игоревич Лосев Антон Сергеевич Макарова Александра Михайловна Муратов Тимур Шухратович Назаренко Екатерина Михайловна Никитин Артём Александрович Новоселова Татьяна Михайловна Орлов Данил Дмитриевич Пискун Дмитрий Михайлович Проходцев Сергей Олегович Рахманов Амир Ренатович Редков Максим Александрович Романенко Андрей Георгиевич Рыжков Александр Сергеевич Семенов Александр Владимирович Семянников Никита Сергеевич Степанов Константин Константинович Чеснаков Максим Михайлович Чикилев Данил Дмитриевич Чуркин Максим Евгеньевич Широков Антон Дмитриевич Шрестха Алекс Раджинович"
+    insertData = insertData.split(' ')
+    let users = []
+    for (let i = 0; i <= insertData.length; i += 3) {
+        users.push({'surname': insertData[i], 'name': insertData[i + 1], 'patronymic': insertData[i + 2]})
+    }
+    console.log(users)
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+        <div className="container">
+            <div className="chats">
+                <table>
+                    <tr>
+                        <th>Фамилия</th>
+                        <th>Имя</th>
+                        <th>Отчество</th>
+                    </tr>
+                    {users.map(user => {
+                        return (
+                            <tr>
+                                <td>{user.surname}</td>
+                                <td>{user.name}</td>
+                                <td>{user.patronymic}</td>
+                            </tr>
+                        )
+                    })}
+                </table>
+            </div>
         </div>
     );
 }
