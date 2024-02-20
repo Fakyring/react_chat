@@ -6,7 +6,6 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 0 0 0;
 }
 
 .chats {
@@ -23,7 +22,7 @@ table, td, th {
     text-align: center;
 }
 
-tr:nth-child(9) {
+tr:nth-child(7) {
     background: #5de0d8;
 }
 
@@ -31,7 +30,7 @@ table {
     border-collapse: collapse;
 }
 
-footer {
+footer, header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -42,6 +41,16 @@ footer {
     padding: 0;
     margin: 0;
     background: rgba(91, 94, 103, 0.83);
+}
+
+header {
+    position: relative;
+    height: 5vh;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
 }
 
 footer .media {

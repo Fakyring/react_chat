@@ -1,38 +1,21 @@
 import './App.css';
+import {BrowserRouter as Router, Switch, Route, Routes, BrowserRouter} from 'react-router-dom';
 import Footer from "./components/footer";
+import Chat_list from "./components/chat_list";
+import About from './components/About';
+import React from "react";
+import Header from "./components/header";
+import Home from "./components/home";
 
 function App() {
-    let insertData = "Астахов Никита Иванович Борисов Денис Александрович Вдовичев Никита Сергеевич Жирнов Никита Игоревич Заикин Даниил Юрьевич Зворыкин Глеб Игоревич Козлова Мария Евгеньевна Крутиков Никита Игоревич Лосев Антон Сергеевич Макарова Александра Михайловна Муратов Тимур Шухратович Назаренко Екатерина Михайловна Никитин Артём Александрович Новоселова Татьяна Михайловна Орлов Данил Дмитриевич Пискун Дмитрий Михайлович Проходцев Сергей Олегович Рахманов Амир Ренатович Редков Максим Александрович Романенко Андрей Георгиевич Рыжков Александр Сергеевич Семенов Александр Владимирович Семянников Никита Сергеевич Степанов Константин Константинович Чеснаков Максим Михайлович Чикилев Данил Дмитриевич Чуркин Максим Евгеньевич Широков Антон Дмитриевич Шрестха Алекс Раджинович"
-    insertData = insertData.split(' ')
-    let users = []
-    for (let i = 0; i < insertData.length; i += 3) {
-        users.push({'id': (i / 3) + 1, 'surname': insertData[i], 'name': insertData[i + 1], 'patronymic': insertData[i + 2]})
-    }
-    console.log(users)
     return (
         <div className="container">
-            <div className="chats">
-                <input type={"checkbox"} className={"check"}></input>
-                <table>
-                    <caption>Ст*денты</caption>
-                    <tr>
-                        <th>ID</th>
-                        <th>Фамилия</th>
-                        <th>Имя</th>
-                        <th>Отчество</th>
-                    </tr>
-                    {users.map(user => {
-                        return (
-                            <tr>
-                                <td>{user.id}</td>
-                                <td>{user.surname}</td>
-                                <td>{user.name}</td>
-                                <td>{user.patronymic}</td>
-                            </tr>
-                        )
-                    })}
-                </table>
-            </div>
+            <Header/>
+            <Routes>
+                <Route path='/' element={<Home/>}></Route>
+                <Route path='/about' element={<About/>}></Route>
+                <Route path='*' element={About}></Route>
+            </Routes>
             <Footer/>
         </div>
     );
