@@ -1,6 +1,4 @@
 import React from 'react';
-import {Route, Router, Routes, Switch} from "react-router-dom";
-import About from "./About";
 
 function Footer() {
     return (
