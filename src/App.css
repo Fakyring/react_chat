@@ -78,6 +78,16 @@ a:hover {
     color: blueviolet !important;
 }
 
+.centered {
+    text-align: center;
+}
+
+.chatUser {
+    width: 100%;
+    display: block;
+    padding-bottom: 10px;
+}
+
 @keyframes rotateshit {
     0% {
         rotate: 0deg;

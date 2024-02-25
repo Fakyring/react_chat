@@ -1,20 +1,13 @@
 import React, {useState} from "react";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 
 function Dialog(props) {
     const user = useLocation().state.user;
+    let params = useParams();
     return (
         <div style={{paddingTop: '10px'}}>
-            <table>
-                <tbody>
-                <tr>
-                    <td>{user.id}</td>
-                    <td>{user.surname}</td>
-                    <td>{user.name}</td>
-                    <td>{user.patronymic}</td>
-                </tr>
-                </tbody>
-            </table>
+            <span className='centered chatUser'>{params.dialogId}: {[user.surname, ' ', user.name]}</span>
+            <textarea rows='40' cols='100'></textarea>
         </div>
     )
 }
