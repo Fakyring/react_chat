@@ -1,21 +1,23 @@
 import './App.css';
-import {Route, Routes} from 'react-router-dom';
-import Footer from "./components/footer";
+import {Navigate, Route, Routes} from 'react-router-dom';
+import Footer from "./components/outer/footer";
 import About from './components/About';
 import React from "react";
-import Header from "./components/header";
+import Header from "./components/outer/header";
 import Home from "./components/home";
-import Dialog from "./components/dialogs";
+import Dialog from "./components/chat/dialogs";
+import Auth from "./components/authorizations/auth";
 
 function App() {
     return (
         <div className="container">
             <Header/>
             <Routes>
-                <Route path="/dialogs/:dialogId" element={<Dialog/>} />
+                <Route path="/dialogs/:dialogId" element={<Dialog/>}/>
                 <Route path='/' element={<Home/>}></Route>
                 <Route path='/about' element={<About/>}></Route>
-                <Route path='*' element={<About/>}></Route>
+                <Route path='/auth' element={<Auth/>}></Route>
+                <Route path='*' element={<Home/>}></Route>
             </Routes>
             <Footer/>
         </div>

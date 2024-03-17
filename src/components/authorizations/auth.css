@@ -1,0 +1,7 @@
+.authBox{
+    display: flex;
+    flex-flow: column;
+    gap: 3px;
+    height: 85vh;
+    justify-content: center;
+}
