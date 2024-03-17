@@ -1,10 +1,13 @@
 import './auth.css';
 import {useDispatch, useSelector} from "react-redux";
 import {addUser, setCurrent} from "../reduxComp/userSlice";
+import {GoogleLogin} from "@react-oauth/google";
+import {jwtDecode} from "jwt-decode";
 
-function Auth() {
+function Auth(token, options) {
     const users = useSelector((state) => state.user.users)
     const dispatch = useDispatch()
+
     function storeUser() {
         let login = document.getElementById("login").value
         let password = document.getElementById("password").value
@@ -26,6 +29,7 @@ function Auth() {
             <input type="text" id="rights" placeholder={"Rights"}/>
             <label htmlFor={"role"}>Admin?<input type="checkbox" id="role"/></label>
             <input type="button" id="auth" value={"Login/Register"} onClick={storeUser}/>
+            <GoogleLogin onSuccess={(credentialResponse) => console.log(jwtDecode(credentialResponse.credential))} onError={() => console.log("not blahblah")}/>
         </div>
     )
 }
