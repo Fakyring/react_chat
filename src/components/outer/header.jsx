@@ -8,6 +8,7 @@ function Header(props) {
     return (
         <header>
             <Link to='/'>Home</Link>
+            <Link to='/api'>Api</Link>
             {about}
             <Link to='/auth'>Auth</Link>
         </header>

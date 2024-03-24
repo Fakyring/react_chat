@@ -7,6 +7,7 @@ import Header from "./components/outer/header";
 import Home from "./components/home";
 import Dialog from "./components/chat/dialogs";
 import Auth from "./components/authorizations/auth";
+import Apitest from "./components/api/apitest";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/dialogs/:dialogId" element={<Dialog/>}/>
                 <Route path='/' element={<Home/>}></Route>
                 <Route path='/about' element={<About/>}></Route>
+                <Route path='/api' element={<Apitest/>}></Route>
                 <Route path='/auth' element={<Auth/>}></Route>
                 <Route path='*' element={<Home/>}></Route>
             </Routes>
