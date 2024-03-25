@@ -10,14 +10,14 @@ function Apitest() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({login: user.login, password: user.password})
         };
-        fetch('/api/v1/login', requestOptions)
+        fetch('/api/api/v1/login', requestOptions)
             .then(response => response.json())
             .then(data => localStorage.setItem('token', data.access_token));
     }
 
     function getUsers() {
         const headers = {'Authorization': 'Bearer ' + localStorage.getItem('token')}
-        fetch('/api/v1/users', {headers})
+        fetch('/api/api/v1/users', {headers})
             .then(response => response.json())
             .then(data => setUsers(data.data));
     }
