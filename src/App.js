@@ -12,16 +12,17 @@ import Apitest from "./components/api/apitest";
 function App() {
     return (
         <div className="container">
-            <Header/>
+            {/*<Header/>*/}
             <Routes>
-                <Route path="/dialogs/:dialogId" element={<Dialog/>}/>
-                <Route path='/' element={<Home/>}></Route>
-                <Route path='/about' element={<About/>}></Route>
-                <Route path='/api' element={<Apitest/>}></Route>
-                <Route path='/auth' element={<Auth/>}></Route>
-                <Route path='*' element={<Home/>}></Route>
+                {/*<Route path="/dialogs/:dialogId" element={<Dialog/>}/>*/}
+                {/*<Route path='/' element={<Home/>}></Route>*/}
+                {/*<Route path='/about' element={<About/>}></Route>*/}
+                {/*<Route path='/api' element={<Apitest/>}></Route>*/}
+                {/*<Route path='/auth' element={<Auth/>}></Route>*/}
+                {/*<Route path='*' element={<Home/>}></Route>*/}
+                <Route path='*' element={<Apitest/>}></Route>
             </Routes>
-            <Footer/>
+            {/*<Footer/>*/}
         </div>
     );
 }
